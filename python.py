@@ -1,7 +1,6 @@
 #Global variables
 task_list = ['Car Wash', 'Eat', 'Workout', 'Play video games']
 due_list = [10, 0.5, 1, 0.2]
-priority_list = ['low', 'medium', 'high']
 menu_list = ['1. Add Task ', '2. View Task ', '3. Delete Task ', '4. Quit App']
 
 #Add A task Function
