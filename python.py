@@ -6,6 +6,9 @@ menu_list = ['1. Add Task ', '2. View Task ', '3. Delete Task ', '4. Quit App']
 #Add A task Function
 def add_task():
     user_add = input('\nWhat task would you like to add? ')
+    if user_add == '':
+        print('\nMust type something!')
+        Menu()
     try:
         when_due = float(input('\nPlease enter when task is due in hours. Decimal places are okay: '))
         if when_due > 0:
@@ -48,6 +51,7 @@ def delete_task(tasks):
 #Quit Application
 def quit_app():
     print('\nGoodbye!\n')
+    exit()
 
 #Capture user menu selection
 def Menu():
