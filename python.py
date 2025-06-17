@@ -8,7 +8,7 @@ def add_task():
     user_add = input('\nWhat task would you like to add? ')
     if user_add == '':
         print('\nMust type something!')
-        Menu()
+        menu()
     try:
         when_due = float(input('\nPlease enter when task is due in hours. Decimal places are okay: '))
         if when_due > 0:
@@ -18,10 +18,10 @@ def add_task():
         #task_list is appeneded in the try block because it should only append to list if when_due is valid. Else, indexing gets out of order.
         else:
             print('\nMust be a positive number!')
-            Menu()
+            menu()
     except ValueError:
         print('\nPlease enter a number!')
-        Menu()
+        menu()
 
 #View tasks Function
 def view_task(tasks, due):
@@ -54,7 +54,7 @@ def quit_app():
     exit()
 
 #Capture user menu selection
-def Menu():
+def menu():
     print('\nWelcome to your To-Do Application, please select a number to continue: ')
 
     print('')
@@ -66,23 +66,23 @@ def Menu():
         option_select = int(input('\nSelection: '))
     except ValueError:
         print('Must be a number!')
-        Menu()
+        menu()
 
     #Switch for user selection
     match option_select:
         case 1:
             add_task()
-            Menu()
+            menu()
         case 2:
             view_task(tasks=task_list, due=due_list)
-            Menu()
+            menu()
         case 3:
             delete_task(tasks=task_list)
-            Menu()
+            menu()
         case 4:
             quit_app()
         case _:
             print('Invalid Choice')
-            Menu()
+            menu()
 
-Menu()
+menu()
